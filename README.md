@@ -13,6 +13,9 @@ metalsmith
     .use(replace({
         title: function(title){
             return title.replace('aaa', 'bbb');
+        },
+        content: function(content){
+            return content.replace('str1', 'str2');
         }
     }))
     .use(replace({

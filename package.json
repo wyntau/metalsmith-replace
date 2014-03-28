@@ -1,10 +1,10 @@
 {
   "name": "metalsmith-replace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a replace plugin for metalsmith",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "keywords": [
     "metalsmith",
