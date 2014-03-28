@@ -1,0 +1,34 @@
+{
+  "name": "metalsmith-replace",
+  "version": "0.0.1",
+  "description": "a replace plugin for metalsmith",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metalsmith",
+    "replace"
+  ],
+  "author": "Jeremial",
+  "license": "MIT",
+  "dependencies": {
+    "jistype": "0.0.3"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "metalsmith": "^0.5.0",
+    "mocha": "^1.18.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jeremial/metalsmith-replace"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeremial/metalsmith-replace/issues"
+  },
+  "homepage": "https://github.com/Jeremial/metalsmith-replace"
+}
