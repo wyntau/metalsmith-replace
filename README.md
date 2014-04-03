@@ -2,6 +2,10 @@
 
 a replace plugin for metalsmith
 
+### Install
+
+    npm install metalsmith-replace
+
 ### Usage
 ```js
 var metalSmith = require('metalsmith');

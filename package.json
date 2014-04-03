@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-replace",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a replace plugin for metalsmith",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Jeremial",
   "license": "MIT",
   "dependencies": {
-    "jistype": "0.0.3"
+    "jistype": "0.0.4"
   },
   "devDependencies": {
     "chai": "^1.9.1",
