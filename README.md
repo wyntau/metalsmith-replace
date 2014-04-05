@@ -1,10 +1,10 @@
 ## metalsmith-replace
+[![NPM version](https://badge.fury.io/js/metalsmith-replace.png)](http://badge.fury.io/js/metalsmith-replace) [![Dependencies Status](https://david-dm.org/Jeremial/metalsmith-replace.png)](https://david-dm.org/Jeremial/metalsmith-replace)
 
 An attribute's value replace plugin for metalsmith
 
 ### Install
-
-    npm install metalsmith-replace
+[![metalsmith-replace](https://nodei.co/npm/metalsmith-replace.png?compact=true)](https://nodei.co/npm/metalsmith-replace)
 
 ### Usage
 ```js
