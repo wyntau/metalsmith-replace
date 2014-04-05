@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-replace",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An attribute's value replace plugin for metalsmith",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
   },
   "keywords": [
     "metalsmith",
-    "replace"
+    "replace",
+    "plugin"
   ],
   "author": "Jeremial",
   "license": "MIT",
