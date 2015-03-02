@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-replace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An attribute's value replace plugin for metalsmith",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
   "author": "Treri",
   "license": "MIT",
   "dependencies": {
-    "jistype": "0.0.4"
+    "jistype": "0.1.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "metalsmith": "^0.5.0",
-    "mocha": "^1.18.2"
+    "chai": "^2.1.0",
+    "metalsmith": "^1.3.0",
+    "mocha": "^2.1.0"
   },
   "directories": {
     "test": "test"

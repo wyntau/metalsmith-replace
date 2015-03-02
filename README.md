@@ -1,5 +1,5 @@
 ## metalsmith-replace
-[![NPM version](https://badge.fury.io/js/metalsmith-replace.png)](http://badge.fury.io/js/metalsmith-replace) [![Dependencies Status](https://david-dm.org/Jeremial/metalsmith-replace.png)](https://david-dm.org/Jeremial/metalsmith-replace)
+[![NPM version](https://badge.fury.io/js/metalsmith-replace.png)](http://badge.fury.io/js/metalsmith-replace) [![Dependencies Status](https://david-dm.org/Treri/metalsmith-replace.png)](https://david-dm.org/Treri/metalsmith-replace)
 
 An attribute's value replace plugin for metalsmith
 
