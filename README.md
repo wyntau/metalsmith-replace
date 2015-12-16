@@ -3,6 +3,8 @@
 
 An attribute's value replace plugin for metalsmith
 
+use [Applause](https://github.com/outaTiME/applause) to replace.
+
 ### Install
 [![metalsmith-replace](https://nodei.co/npm/metalsmith-replace.png?compact=true)](https://nodei.co/npm/metalsmith-replace)
 
@@ -15,17 +17,27 @@ var metalsmith = metalSmith(__dirname);
 metalsmith
     .source('post')
     .use(replace({
-        title: function(title){
-            return title.replace('aaa', 'bbb');
+        title: {
+            patterns: [{
+                match: 'aaa',
+                replacement: 'bbb'
+            }]
         },
-        content: function(content){
-            return content.replace('str1', 'str2');
+        content: {
+            patterns: [{
+                match: 'str1',
+                replacement: function() {
+                    return 'str2';
+                }
+            }]
         }
     }))
     .use(replace({
         title: {
-            from: 'a.md',
-            to: 'b.md'
+            patterns: [{
+                match: 'a.md',
+                replacement: 'b.md'
+            }]
         }
     }))
     .build();
@@ -33,14 +45,7 @@ metalsmith
 
 ### Options
 
-The keys of options is the attribute name of your files, and value should to
-be a `object`, `function`, or `array` which contains `object` or `function`;
-
-when `object`, it should have attribute `from` and `to`, and the value of `from` can be `string` or `regex`
-
-when `function`, the signature is `function(oldValue){}`, and the function should return the new value
-
-when `array`, it should contains `object` or `function` above
+see [Applause](https://github.com/outaTiME/applause)
 
 ### License
 MIT

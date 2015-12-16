@@ -1,5 +1,5 @@
 ---
-title: a.md test title aaa
+title: a.md test title aaa @@aaa
 src: post
 author: Treri
 ---

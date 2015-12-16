@@ -1,127 +1,94 @@
 var metalSmith = require('metalsmith');
 var replace = require('..');
 
-describe('metalsmith-replace', function(){
-    it('one replace object str', function(done){
+describe('metalsmith-replace', function() {
+    it('should match @@ and replace with string', function(done) {
         var metalsmith = metalSmith(__dirname);
         metalsmith
             .source('post')
             .use(replace({
-                title:{
-                    from: 'aaa',
-                    to: 'bbb'
+                title: {
+                    patterns: [{
+                        match: 'aaa',
+                        replacement: 'bbb'
+                    }]
                 }
             }))
-            .read(function(err, files){
+            .read(function(err, files) {
                 should.not.exist(err);
-                metalsmith.run(files, function(err, files){
+                metalsmith.run(files, function(err, files) {
                     should.not.exist(err);
-                    files['a.md'].title.should.equal('a.md test title bbb');
+                    files['a.md'].title.should.equal('a.md test title aaa bbb');
                     done();
                 });
             });
     });
 
-    it('one replace object regex', function(done){
+    it('should match @@ and replace with function', function(done) {
         var metalsmith = metalSmith(__dirname);
         metalsmith
             .source('post')
             .use(replace({
-                title:{
-                    from: /aaa/,
-                    to: 'bbb'
+                title: {
+                    patterns: [{
+                        match: 'aaa',
+                        replacement: function(){
+                            return 'bbb';
+                        }
+                    }]
                 }
             }))
-            .read(function(err, files){
+            .read(function(err, files) {
                 should.not.exist(err);
-                metalsmith.run(files, function(err, files){
+                metalsmith.run(files, function(err, files) {
                     should.not.exist(err);
-                    files['a.md'].title.should.equal('a.md test title bbb');
+                    files['a.md'].title.should.equal('a.md test title aaa bbb');
                     done();
                 });
             });
     });
 
-    it('multi replace object', function(done){
+    it('should match regex and replace with string', function(done) {
         var metalsmith = metalSmith(__dirname);
         metalsmith
             .source('post')
             .use(replace({
-                title: [{
-                    from: 'aaa',
-                    to: 'bbb'
-                },{
-                    from: 'a.md',
-                    to: 'b.md'
-                }]
-            }))
-            .read(function(err, files){
-                should.not.exist(err);
-                metalsmith.run(files, function(err, files){
-                    should.not.exist(err);
-                    files['a.md'].title.should.equal('b.md test title bbb');
-                    done();
-                });
-            });
-    });
-
-    it('one replace function', function(done){
-        var metalsmith = metalSmith(__dirname);
-        metalsmith
-            .source('post')
-            .use(replace({
-                title: function(title){
-                    return title.replace('aaa', 'bbb');
+                title: {
+                    patterns: [{
+                        match: /aaa/g,
+                        replacement: 'bbb'
+                    }]
                 }
             }))
-            .read(function(err, files){
+            .read(function(err, files) {
                 should.not.exist(err);
-                metalsmith.run(files, function(err, files){
+                metalsmith.run(files, function(err, files) {
                     should.not.exist(err);
-                    files['a.md'].title.should.equal('a.md test title bbb');
+                    files['a.md'].title.should.equal('a.md test title bbb @@bbb');
                     done();
                 });
             });
     });
 
-    it('multi replace function', function(done){
+    it('should match regex and replace with function', function(done) {
         var metalsmith = metalSmith(__dirname);
         metalsmith
             .source('post')
             .use(replace({
-                title: [function(title){
-                    return title.replace('aaa', 'bbb');
-                }, function(title){
-                    return title.replace('a.md', 'b.md');
-                }]
+                title: {
+                    patterns: [{
+                        match: /aaa/g,
+                        replacement: function(){
+                            return 'bbb'
+                        }
+                    }]
+                }
             }))
-            .read(function(err, files){
+            .read(function(err, files) {
                 should.not.exist(err);
-                metalsmith.run(files, function(err, files){
+                metalsmith.run(files, function(err, files) {
                     should.not.exist(err);
-                    files['a.md'].title.should.equal('b.md test title bbb');
-                    done();
-                });
-            });
-    });
-
-    it('mixed replace option', function(done){
-        var metalsmith = metalSmith(__dirname);
-        metalsmith
-            .source('post')
-            .use(replace({
-                title: [{
-                    from: 'aaa',
-                    to: 'bbb'
-                }, function(title){
-                    return title.replace('a.md', 'b.md');
-                }]
-            }))
-            .read(function(err, files){
-                should.not.exist(err);
-                metalsmith.run(files, function(err, files){
-                    should.not.exist(err);
-                    files['a.md'].title.should.equal('b.md test title bbb');
+                    files['a.md'].title.should.equal('a.md test title bbb @@bbb');
                     done();
                 });
             });
