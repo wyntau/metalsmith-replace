@@ -25,7 +25,7 @@ metalsmith
         },
         content: {
             patterns: [{
-                match: 'str1',
+                match: /str1/g,
                 replacement: function() {
                     return 'str2';
                 }
